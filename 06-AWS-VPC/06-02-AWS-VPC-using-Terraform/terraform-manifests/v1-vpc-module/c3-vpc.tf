@@ -1,9 +1,8 @@
-# Create VPC Terraform Module
+# Create VPC with Terraform Module
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  #version = "4.0.1"  
-  version = "5.4.0"
-    
+  version = "5.5.2"
+
   # VPC Basic Details
   name = "vpc-dev"
   cidr = "10.0.0.0/16"   
@@ -40,7 +39,7 @@ module "vpc" {
   }
 
   tags = {
-    Owner = "kalyan"
+    Owner = "aamir"
     Environment = "dev"
   }
 
@@ -50,6 +49,3 @@ module "vpc" {
   # Instances launched into the Public subnet should be assigned a public IP address.
   map_public_ip_on_launch = true
 }
-
-
-
